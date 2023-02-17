@@ -4,7 +4,7 @@ metadata:
   name: flask-app
 
 spec:
-  replicas: 2
+  replicas: 1
   selector: 
     matchLabels:
       app: flask-app
@@ -15,10 +15,11 @@ spec:
 
     spec:
       containers:
-        - name: pyapp5
-          image: hrushi1509/flaskapp
+        - name: rishi
+          image: nginx--latest
           imagePullPolicy: Never
           ports:
             - containerPort: 5000
               protocol: TCP
+          # type: LoadBalancer
       
